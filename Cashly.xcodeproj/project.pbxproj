@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E14595722E56F8A000BD08D3 /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15B819F2E5B654E008483EC /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E14595842E56F8A100BD08D3 /* Exceptions for "Cashly" folder in "Cashly" target */ = {
+		E15B818C2E5B61C9008483EC /* Exceptions for "Cashly" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +24,7 @@
 		E14595742E56F8A000BD08D3 /* Cashly */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E14595842E56F8A100BD08D3 /* Exceptions for "Cashly" folder in "Cashly" target */,
+				E15B818C2E5B61C9008483EC /* Exceptions for "Cashly" folder in "Cashly" target */,
 			);
 			path = Cashly;
 			sourceTree = "<group>";
@@ -46,16 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				E14595742E56F8A000BD08D3 /* Cashly */,
-				E14595732E56F8A000BD08D3 /* Products */,
+				E15B819F2E5B654E008483EC /* Cashly.app */,
 			);
-			sourceTree = "<group>";
-		};
-		E14595732E56F8A000BD08D3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E14595722E56F8A000BD08D3 /* Cashly.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = Cashly;
-			productReference = E14595722E56F8A000BD08D3 /* Cashly.app */;
+			productReference = E15B819F2E5B654E008483EC /* Cashly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +100,7 @@
 			mainGroup = E14595692E56F8A000BD08D3;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E14595732E56F8A000BD08D3 /* Products */;
+			productRefGroup = E14595692E56F8A000BD08D3;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -149,7 +141,6 @@
 				INFOPLIST_FILE = Cashly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -176,7 +167,6 @@
 				INFOPLIST_FILE = Cashly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
