@@ -35,7 +35,7 @@ final class LoginViewController: BaseViewController {
         return field
     }()
     
-    private let forgtButton: UIButton = {
+    private let forgotButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Forgot Password?", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 13)
@@ -108,7 +108,7 @@ final class LoginViewController: BaseViewController {
         view.addSubviews(lottieView,
                          emailTextField,
                          passwordTextField,
-                         forgtButton,
+                         forgotButton,
                          okButton ,
                          registerStack)
         
@@ -134,11 +134,11 @@ final class LoginViewController: BaseViewController {
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             
             /// Forget Button
-            forgtButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
-            forgtButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            forgotButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
+            forgotButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
             
             /// Login Button
-            okButton.topAnchor.constraint(equalTo: forgtButton.bottomAnchor, constant: 16),
+            okButton.topAnchor.constraint(equalTo: forgotButton.bottomAnchor, constant: 16),
             okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             okButton.heightAnchor.constraint(equalToConstant: 56),
             okButton.widthAnchor.constraint(equalToConstant: view.frame.width * 0.7),
@@ -151,7 +151,7 @@ final class LoginViewController: BaseViewController {
     
     override func configureActions() {
         registerButton.addTarget(self, action: #selector(getRegister), for: .touchUpInside)
-        forgtButton.addTarget(self, action: #selector(forgotTapped), for: .touchUpInside)
+        forgotButton.addTarget(self, action: #selector(forgotTapped), for: .touchUpInside)
         okButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
     }

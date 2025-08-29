@@ -233,7 +233,6 @@ final class RegisterViewController: BaseViewController {
         let confirmValid = confirmNotEmpty && confirmPassword.validateConfirmPassword(match: passwordField.text ?? "")
         
         if emailValid && passwordValid && confirmValid {
-            print("Form valid ✅, server-ə göndər")
         }
     }
     
