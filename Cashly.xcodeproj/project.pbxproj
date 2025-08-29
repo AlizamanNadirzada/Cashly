@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E15B81FE2E5C7367008483EC /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Cashly.app; path = "/Users/nazirzadaalizaman/Desktop/Cashly/build/Debug-iphoneos/Cashly.app"; sourceTree = "<absolute>"; };
+		E128A9912E603E9900098C09 /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15B82172E5C7367008483EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -28,8 +28,10 @@
 		E15B82502E5C8692008483EC /* Exceptions for "Base" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				BaseField.swift,
 				BaseViewController.swift,
 				Colors.swift,
+				"Extensions/UIView+Ext.swift",
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
@@ -42,16 +44,10 @@
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
-		E15B82522E5C8692008483EC /* Exceptions for "ReusableComponents" folder in "Cashly" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ReusablaField.swift,
-			);
-			target = E14595712E56F8A000BD08D3 /* Cashly */;
-		};
 		E15B82532E5C8692008483EC /* Exceptions for "Views" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Auth/AuthCoordinator.swift,
 				Auth/Login/LoginViewController.swift,
 				Auth/Login/LoginViewModel.swift,
 				Auth/Register/RegisterViewController.swift,
@@ -86,14 +82,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E15B82372E5C8692008483EC /* ReusableComponents */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E15B82522E5C8692008483EC /* Exceptions for "ReusableComponents" folder in "Cashly" target */,
-			);
-			path = ReusableComponents;
-			sourceTree = "<group>";
-		};
 		E15B82412E5C8692008483EC /* Views */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -120,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E15B82282E5C8685008483EC /* Cashly */,
+				E128A9912E603E9900098C09 /* Cashly.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +117,6 @@
 			children = (
 				E15B822C2E5C8692008483EC /* App */,
 				E15B822F2E5C8692008483EC /* Base */,
-				E15B82372E5C8692008483EC /* ReusableComponents */,
 				E15B82412E5C8692008483EC /* Views */,
 				E15B82352E5C8692008483EC /* Resources */,
 				E15B82172E5C7367008483EC /* Info.plist */,
@@ -156,7 +144,7 @@
 				E15B81D52E5B68CE008483EC /* Lottie */,
 			);
 			productName = Cashly;
-			productReference = E15B81FE2E5C7367008483EC /* Cashly.app */;
+			productReference = E128A9912E603E9900098C09 /* Cashly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
