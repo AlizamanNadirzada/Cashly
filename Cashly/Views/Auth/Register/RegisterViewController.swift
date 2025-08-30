@@ -18,8 +18,7 @@ final class RegisterViewController: BaseViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .register3
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = .register
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -177,12 +176,12 @@ final class RegisterViewController: BaseViewController {
         NSLayoutConstraint.activate([
             /// Title Label
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            imageView.heightAnchor.constraint(equalToConstant: 120),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 150),
+            imageView.widthAnchor.constraint(equalToConstant: 250),
             
             /// Scroll View
-            scrollView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 32),
+            scrollView.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: okButton.topAnchor, constant: -32),
