@@ -9,7 +9,6 @@ import UIKit
 
 protocol Coordinator: AnyObject {
     var children: [Coordinator] { get set }
-    var navigationController: UINavigationController { get set }
     func start()
 }
 
@@ -23,35 +22,58 @@ extension Coordinator {
     }
 }
 
-
-class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     var children: [Coordinator] = []
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    var window: UIWindow
+
+    init(window: UIWindow) {
+        self.window = window
     }
-    
+
     func start() {
         showAuthFlow()
     }
     
     private func showAuthFlow() {
+        let navigationController = UINavigationController()
         let authCoordinator = AuthCoordinator(navigationController: navigationController)
-        addChild(authCoordinator)
-        authCoordinator.start()
         
         authCoordinator.onAuthSuccess = { [weak self, weak authCoordinator] in
             guard let self = self, let authCoordinator = authCoordinator else { return }
             self.removeChild(authCoordinator)
-            self.showMainFlow()
+            self.showTabBar()
         }
+        
+        addChild(authCoordinator)
+        authCoordinator.start()
+        
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
-    
-    private func showMainFlow() {
-        let mainVC = UIViewController()
-        mainVC.view.backgroundColor = .systemGreen
-        mainVC.title = "Main Screen"
-        navigationController.setViewControllers([mainVC], animated: true)
+
+
+    func showTabBar() {
+        let tabBarVC = UITabBarController()
+        tabBarVC.tabBar.tintColor = .button01
+        tabBarVC.tabBar.unselectedItemTintColor = .gray
+
+
+        let homeVC = HomeViewController()
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        
+        let transferVC = UIViewController()
+        transferVC.tabBarItem = UITabBarItem(title: "Transfer", image: UIImage(systemName: "person.crop.circle"), tag: 1)
+
+        let profileVC = ProfileViewController()
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "gear"), tag: 2)
+
+        let home = UINavigationController(rootViewController: homeVC)
+        let transfer = UINavigationController(rootViewController: transferVC)
+        let profile = UINavigationController(rootViewController: profileVC)
+
+        tabBarVC.viewControllers = [home, transfer, profile]
+
+        window.rootViewController = tabBarVC
+        window.makeKeyAndVisible()
     }
 }

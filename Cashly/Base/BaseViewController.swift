@@ -7,8 +7,8 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
-    override func viewDidLoad() {
+open class BaseViewController: UIViewController {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground

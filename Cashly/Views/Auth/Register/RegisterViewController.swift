@@ -19,6 +19,7 @@ final class RegisterViewController: BaseViewController {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .register
+        imageView.backgroundColor = .clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

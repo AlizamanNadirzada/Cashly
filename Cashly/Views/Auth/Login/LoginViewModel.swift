@@ -17,4 +17,8 @@ final class LoginViewModel {
     func showRegister() {
         coordinator?.showRegister()
     }
+    
+    func showTabBar() {
+        coordinator?.showTabBar()
+    }
 }

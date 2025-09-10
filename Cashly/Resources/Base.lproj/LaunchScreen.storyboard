@@ -23,7 +23,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LounchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-dt-xBw">
                                 <rect key="frame" x="0.0" y="0.0" width="445" height="906"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="0.94999999999999996" height="0.75"/>
+                                <rect key="contentStretch" x="0.0" y="0.10000000000000001" width="0.94999999999999996" height="0.75"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

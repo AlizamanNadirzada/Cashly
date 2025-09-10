@@ -10,9 +10,10 @@ import UIKit
 protocol AuthCoordinatorProtocol: AnyObject {
     func showRegister()
     func showLogin()
+    func showTabBar()
 }
 
-class AuthCoordinator: Coordinator {
+final class AuthCoordinator: Coordinator {
     var children: [Coordinator] = []
     var navigationController: UINavigationController
     var onAuthSuccess: (() -> Void)?
@@ -40,5 +41,9 @@ extension AuthCoordinator: AuthCoordinatorProtocol {
     func showLogin() {
         let loginVC = LoginViewController(viewModel: LoginViewModel(coordinator: self))
         navigationController.setViewControllers([loginVC], animated: true)
+    }
+    
+    func showTabBar() {
+        onAuthSuccess?()
     }
 }

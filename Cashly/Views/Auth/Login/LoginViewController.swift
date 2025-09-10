@@ -171,5 +171,7 @@ final class LoginViewController: BaseViewController {
     @objc func loginTapped() {
         emailTextField.validateNotEmpty()
         passwordTextField.validateNotEmpty()
+        
+        viewModel.showTabBar()
     }
 }

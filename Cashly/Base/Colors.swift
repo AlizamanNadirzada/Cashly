@@ -14,6 +14,9 @@ extension UIColor {
     
     // MARK: Text & Icon
     public static let base01: UIColor = .init(hex: "009D2D")
+    
+    // Mark: Backround
+    public static let background01: UIColor = .init(hex: "1E1E1E")
 }
 
 extension UIColor {
