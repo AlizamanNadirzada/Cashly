@@ -6,27 +6,93 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E15B81D62E5B68CE008483EC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E15B81D52E5B68CE008483EC /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		E14595722E56F8A000BD08D3 /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E128A9912E603E9900098C09 /* Cashly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15B82172E5C7367008483EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E14595842E56F8A100BD08D3 /* Exceptions for "Cashly" folder in "Cashly" target */ = {
+		E15B824F2E5C8692008483EC /* Exceptions for "App" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				AppCoordinator.swift,
+				AppDelegate.swift,
+				SceneDelegate.swift,
+			);
+			target = E14595712E56F8A000BD08D3 /* Cashly */;
+		};
+		E15B82502E5C8692008483EC /* Exceptions for "Base" folder in "Cashly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BaseField.swift,
+				BaseViewController.swift,
+				Colors.swift,
+				"Extensions/UIView+Ext.swift",
+			);
+			target = E14595712E56F8A000BD08D3 /* Cashly */;
+		};
+		E15B82512E5C8692008483EC /* Exceptions for "Resources" folder in "Cashly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: LaunchScreen.storyboard",
+				Assets.xcassets,
+				Lottie/loginAnimation.json,
+			);
+			target = E14595712E56F8A000BD08D3 /* Cashly */;
+		};
+		E15B82532E5C8692008483EC /* Exceptions for "Views" folder in "Cashly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Auth/AuthCoordinator.swift,
+				Auth/Login/LoginViewController.swift,
+				Auth/Login/LoginViewModel.swift,
+				Auth/Register/RegisterViewController.swift,
+				Auth/Register/RegisterViewModel.swift,
+				Main/Home/HomeCoordinator.swift,
+				Main/Home/HomeViewController.swift,
+				Main/Home/HomeViewModel.swift,
+				Main/ProfileViewController.swift,
+				Main/TabBar/TabBarCoordinator.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E14595742E56F8A000BD08D3 /* Cashly */ = {
+		E15B822C2E5C8692008483EC /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E14595842E56F8A100BD08D3 /* Exceptions for "Cashly" folder in "Cashly" target */,
+				E15B824F2E5C8692008483EC /* Exceptions for "App" folder in "Cashly" target */,
 			);
-			path = Cashly;
+			path = App;
+			sourceTree = "<group>";
+		};
+		E15B822F2E5C8692008483EC /* Base */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E15B82502E5C8692008483EC /* Exceptions for "Base" folder in "Cashly" target */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E15B82352E5C8692008483EC /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E15B82512E5C8692008483EC /* Exceptions for "Resources" folder in "Cashly" target */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E15B82412E5C8692008483EC /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E15B82532E5C8692008483EC /* Exceptions for "Views" folder in "Cashly" target */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -36,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15B81D62E5B68CE008483EC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,17 +112,21 @@
 		E14595692E56F8A000BD08D3 = {
 			isa = PBXGroup;
 			children = (
-				E14595742E56F8A000BD08D3 /* Cashly */,
-				E14595732E56F8A000BD08D3 /* Products */,
+				E15B82282E5C8685008483EC /* Cashly */,
+				E128A9912E603E9900098C09 /* Cashly.app */,
 			);
 			sourceTree = "<group>";
 		};
-		E14595732E56F8A000BD08D3 /* Products */ = {
+		E15B82282E5C8685008483EC /* Cashly */ = {
 			isa = PBXGroup;
 			children = (
-				E14595722E56F8A000BD08D3 /* Cashly.app */,
+				E15B822C2E5C8692008483EC /* App */,
+				E15B822F2E5C8692008483EC /* Base */,
+				E15B82412E5C8692008483EC /* Views */,
+				E15B82352E5C8692008483EC /* Resources */,
+				E15B82172E5C7367008483EC /* Info.plist */,
 			);
-			name = Products;
+			path = Cashly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,14 +144,12 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E14595742E56F8A000BD08D3 /* Cashly */,
-			);
 			name = Cashly;
 			packageProductDependencies = (
+				E15B81D52E5B68CE008483EC /* Lottie */,
 			);
 			productName = Cashly;
-			productReference = E14595722E56F8A000BD08D3 /* Cashly.app */;
+			productReference = E128A9912E603E9900098C09 /* Cashly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,8 +176,11 @@
 			);
 			mainGroup = E14595692E56F8A000BD08D3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E15B81D42E5B68CE008483EC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E14595732E56F8A000BD08D3 /* Products */;
+			productRefGroup = E14595692E56F8A000BD08D3;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -149,7 +221,6 @@
 				INFOPLIST_FILE = Cashly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -176,7 +247,6 @@
 				INFOPLIST_FILE = Cashly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E15B81D42E5B68CE008483EC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E15B81D52E5B68CE008483EC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E15B81D42E5B68CE008483EC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E145956A2E56F8A000BD08D3 /* Project object */;
 }
