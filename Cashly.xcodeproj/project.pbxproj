@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E15B81D62E5B68CE008483EC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E15B81D52E5B68CE008483EC /* Lottie */; };
+		E1CD077B2E7ADBAA00A4F7B9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E1CD077A2E7ADBAA00A4F7B9 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Auth/AuthCoordinator.swift,
+				Auth/AuthProtocol.swift,
 				Auth/Login/LoginViewController.swift,
 				Auth/Login/LoginViewModel.swift,
 				Auth/Register/RegisterViewController.swift,
@@ -56,7 +58,27 @@
 				Main/Home/HomeViewController.swift,
 				Main/Home/HomeViewModel.swift,
 				Main/ProfileViewController.swift,
+				Main/TabBar/TabBarController.swift,
 				Main/TabBar/TabBarCoordinator.swift,
+			);
+			target = E14595712E56F8A000BD08D3 /* Cashly */;
+		};
+		E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataSources/UserDataSources.swift,
+				Models/User.swift,
+				RepositoryImpl/UserRepositoryImpl.swift,
+			);
+			target = E14595712E56F8A000BD08D3 /* Cashly */;
+		};
+		E1CD07932E7C120000A4F7B9 /* Exceptions for "Domain" folder in "Cashly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Entities/UserEntity.swift,
+				Repository/UserRepisitory.swift,
+				UseCases/LoginUserUseCase.swift,
+				UseCases/RegisterUserUseCase.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
@@ -95,6 +117,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E1CD077C2E7ADEF700A4F7B9 /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E1CD077D2E7ADEFF00A4F7B9 /* Domain */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E1CD07932E7C120000A4F7B9 /* Exceptions for "Domain" folder in "Cashly" target */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CD077B2E7ADBAA00A4F7B9 /* RealmSwift in Frameworks */,
 				E15B81D62E5B68CE008483EC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +161,8 @@
 			children = (
 				E15B822C2E5C8692008483EC /* App */,
 				E15B822F2E5C8692008483EC /* Base */,
+				E1CD077D2E7ADEFF00A4F7B9 /* Domain */,
+				E1CD077C2E7ADEF700A4F7B9 /* Data */,
 				E15B82412E5C8692008483EC /* Views */,
 				E15B82352E5C8692008483EC /* Resources */,
 				E15B82172E5C7367008483EC /* Info.plist */,
@@ -147,6 +188,7 @@
 			name = Cashly;
 			packageProductDependencies = (
 				E15B81D52E5B68CE008483EC /* Lottie */,
+				E1CD077A2E7ADBAA00A4F7B9 /* RealmSwift */,
 			);
 			productName = Cashly;
 			productReference = E128A9912E603E9900098C09 /* Cashly.app */;
@@ -178,6 +220,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E15B81D42E5B68CE008483EC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				E1CD07792E7ADBAA00A4F7B9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E14595692E56F8A000BD08D3;
@@ -413,6 +456,14 @@
 				minimumVersion = 4.5.2;
 			};
 		};
+		E1CD07792E7ADBAA00A4F7B9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +471,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E15B81D42E5B68CE008483EC /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		E1CD077A2E7ADBAA00A4F7B9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1CD07792E7ADBAA00A4F7B9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

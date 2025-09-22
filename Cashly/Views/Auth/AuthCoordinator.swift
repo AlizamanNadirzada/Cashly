@@ -7,42 +7,46 @@
 
 import UIKit
 
-protocol AuthCoordinatorProtocol: AnyObject {
-    func showRegister()
-    func showLogin()
-    func showTabBar()
-}
-
 final class AuthCoordinator: Coordinator {
     var children: [Coordinator] = []
-    var navigationController: UINavigationController
+
+    private let navigationController: UINavigationController
+
     var onAuthSuccess: (() -> Void)?
-    
+
+    private let userRepository: UserRepository
+    private let loginUserUseCase: LoginUserUseCase
+    private let registerUserUseCase: RegisterUserUseCase
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+
+        let dataSource = UserLocalDatasource()
+        let repositoryImpl = UserRepositoryImpl(localDatasource: dataSource)
+
+        self.userRepository = repositoryImpl
+        self.loginUserUseCase = LoginUserUseCase(repository: repositoryImpl)
+        self.registerUserUseCase = RegisterUserUseCase(repository: repositoryImpl)
     }
-    
+
     func start() {
-        showScreen()
+        showLogin()
     }
-    
-    func showScreen() {
-        let loginVC = LoginViewController(viewModel: LoginViewModel(coordinator: self))
-        navigationController.setViewControllers([loginVC], animated: false)
+
+    func showLogin() {
+        let viewModel = LoginViewModel(coordinator: self, loginUseCase: loginUserUseCase)
+        let controller = LoginViewController(viewModel: viewModel)
+        navigationController.setViewControllers([controller], animated: true)
     }
 }
 
-extension AuthCoordinator: AuthCoordinatorProtocol {
+extension AuthCoordinator: AuthProtocol {
     func showRegister() {
-        let registerVC = RegisterViewController(viewModel: RegisterViewModel(coordinator: self))
-        navigationController.setViewControllers([registerVC], animated: true)
+        let viewModel = RegisterViewModel(coordinator: self, registerUseCase: registerUserUseCase)
+        let controller = RegisterViewController(viewModel: viewModel)
+        navigationController.setViewControllers([controller], animated: true)
     }
-    
-    func showLogin() {
-        let loginVC = LoginViewController(viewModel: LoginViewModel(coordinator: self))
-        navigationController.setViewControllers([loginVC], animated: true)
-    }
-    
+
     func showTabBar() {
         onAuthSuccess?()
     }

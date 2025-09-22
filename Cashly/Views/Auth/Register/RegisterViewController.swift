@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class RegisterViewController: BaseViewController {
     // MARK: - UI Elements
@@ -48,7 +49,6 @@ final class RegisterViewController: BaseViewController {
     private let phoneField: BaseField = {
         let field = BaseField()
         field.placeholder = "Phone"
-        field.text = "+994"
         field.keyboardType = .phonePad
         field.numberLimit = 13
         field.translatesAutoresizingMaskIntoConstraints = false
@@ -154,6 +154,9 @@ final class RegisterViewController: BaseViewController {
         super.viewDidLoad()
         
         setupDatePicker()
+        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL)
     }
     
     // MARK: - Setup
@@ -204,7 +207,7 @@ final class RegisterViewController: BaseViewController {
             loginStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             loginStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            birthdayField.heightAnchor.constraint(equalToConstant: 56)
+            birthdayField.heightAnchor.constraint(greaterThanOrEqualToConstant: 56)
         ])
     }
     
@@ -217,23 +220,40 @@ final class RegisterViewController: BaseViewController {
         viewModel.showLogin()
     }
     
-    @objc private func registerTapped() {
-        // Empty Check
+    @objc func registerTapped() {
+        guard validateFields() else { return }
+        
+        let user = createUserEntity()
+        viewModel.register(user: user)
+    }
+
+    private func validateFields() -> Bool {
         nameField.validateNotEmpty()
         surnameField.validateNotEmpty()
         phoneField.validateNotEmpty()
         birthdayField.validateNotEmpty()
+        
         let emailNotEmpty = emailField.validateNotEmpty()
         let passwordNotEmpty = passwordField.validateNotEmpty()
         let confirmNotEmpty = confirmPassword.validateNotEmpty()
         
-        // Format and match checks
         let emailValid = emailNotEmpty && emailField.validateEmail()
         let passwordValid = passwordNotEmpty && passwordField.validatePassword()
         let confirmValid = confirmNotEmpty && confirmPassword.validateConfirmPassword(match: passwordField.text ?? "")
         
-        if emailValid && passwordValid && confirmValid {
-        }
+        return emailValid && passwordValid && confirmValid
+    }
+
+    private func createUserEntity() -> UserEntity {
+        UserEntity(
+            id: UUID().uuidString,
+            name: nameField.text ?? "",
+            surname: surnameField.text ?? "",
+            email: emailField.text ?? "",
+            phone: phoneField.text ?? "",
+            password: passwordField.text ?? "",
+            birthday: birthdayPicker.date
+        )
     }
     
     private func setupDatePicker() {

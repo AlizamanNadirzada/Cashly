@@ -101,6 +101,7 @@ final class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkValidity()
     }
     
     // MARK: - Setup
@@ -169,9 +170,32 @@ final class LoginViewController: BaseViewController {
     }
     
     @objc func loginTapped() {
-        emailTextField.validateNotEmpty()
-        passwordTextField.validateNotEmpty()
+        let emailValid = emailTextField.validateNotEmpty() && emailTextField.validateEmail()
+        let passwordValid = passwordTextField.validateNotEmpty() && passwordTextField.validatePassword()
         
-        viewModel.showTabBar()
+        if emailValid && passwordValid {
+            viewModel.login(
+                email: emailTextField.text ?? "",
+                password: passwordTextField.text ?? ""
+            )
+        }
+    }
+    
+    func checkValidity() {
+        viewModel.onError = { [weak self] message in
+            self?.showErrorAlert(message: message)
+        }
+    }
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        let action = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(action)
+        present(alert,animated: true)
     }
 }
