@@ -8,10 +8,24 @@
 import UIKit
 
 final class RegisterViewModel {
-    private weak var coordinator: AuthCoordinatorProtocol?
+    private weak var coordinator: AuthProtocol?
+    private let registerUseCase: RegisterUserUseCase
+        
+    var onSuccess: (() -> Void)?
     
-    init(coordinator: AuthCoordinatorProtocol) {
+    init(coordinator: AuthProtocol? = nil, registerUseCase: RegisterUserUseCase) {
         self.coordinator = coordinator
+        self.registerUseCase = registerUseCase
+    }
+    
+    func register(user: UserEntity) {
+        do {
+            try registerUseCase.executeRegister(user: user)
+            onSuccess?()
+            coordinator?.showLogin()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func showLogin() {

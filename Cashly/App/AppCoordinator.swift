@@ -24,10 +24,13 @@ extension Coordinator {
 
 final class AppCoordinator: Coordinator {
     var children: [Coordinator] = []
-    var window: UIWindow
+
+    private let window: UIWindow
+    private let navigationController: UINavigationController
 
     init(window: UIWindow) {
         self.window = window
+        self.navigationController = UINavigationController()
     }
 
     func start() {
@@ -35,7 +38,6 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showAuthFlow() {
-        let navigationController = UINavigationController()
         let authCoordinator = AuthCoordinator(navigationController: navigationController)
         
         authCoordinator.onAuthSuccess = { [weak self, weak authCoordinator] in
@@ -51,29 +53,9 @@ final class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
 
-
-    func showTabBar() {
-        let tabBarVC = UITabBarController()
-        tabBarVC.tabBar.tintColor = .button01
-        tabBarVC.tabBar.unselectedItemTintColor = .gray
-
-
-        let homeVC = HomeViewController()
-        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
-        
-        let transferVC = UIViewController()
-        transferVC.tabBarItem = UITabBarItem(title: "Transfer", image: UIImage(systemName: "person.crop.circle"), tag: 1)
-
-        let profileVC = ProfileViewController()
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "gear"), tag: 2)
-
-        let home = UINavigationController(rootViewController: homeVC)
-        let transfer = UINavigationController(rootViewController: transferVC)
-        let profile = UINavigationController(rootViewController: profileVC)
-
-        tabBarVC.viewControllers = [home, transfer, profile]
-
-        window.rootViewController = tabBarVC
+    private func showTabBar() {
+        let tabBar = TabBarController()
+        window.rootViewController = tabBar
         window.makeKeyAndVisible()
     }
 }
