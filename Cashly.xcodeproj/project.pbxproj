@@ -49,7 +49,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Auth/AuthCoordinator.swift,
-				Auth/AuthProtocol.swift,
 				Auth/Login/LoginViewController.swift,
 				Auth/Login/LoginViewModel.swift,
 				Auth/Register/RegisterViewController.swift,
@@ -58,28 +57,7 @@
 				Main/Home/HomeViewController.swift,
 				Main/Home/HomeViewModel.swift,
 				Main/ProfileViewController.swift,
-				Main/TabBar/TabBarController.swift,
 				Main/TabBar/TabBarCoordinator.swift,
-			);
-			target = E14595712E56F8A000BD08D3 /* Cashly */;
-		};
-		E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				DataSources/UserDataProtocol.swift,
-				DataSources/UserDataSources.swift,
-				Models/User.swift,
-				RepositoryImpl/UserRepositoryImpl.swift,
-			);
-			target = E14595712E56F8A000BD08D3 /* Cashly */;
-		};
-		E1CD07932E7C120000A4F7B9 /* Exceptions for "Domain" folder in "Cashly" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Entities/UserEntity.swift,
-				Repository/UserRepisitory.swift,
-				UseCases/LoginUserUseCase.swift,
-				UseCases/RegisterUserUseCase.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
@@ -120,17 +98,11 @@
 		};
 		E1CD077C2E7ADEF700A4F7B9 /* Data */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */,
-			);
 			path = Data;
 			sourceTree = "<group>";
 		};
 		E1CD077D2E7ADEFF00A4F7B9 /* Domain */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E1CD07932E7C120000A4F7B9 /* Exceptions for "Domain" folder in "Cashly" target */,
-			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
