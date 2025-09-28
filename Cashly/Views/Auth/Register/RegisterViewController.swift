@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 final class RegisterViewController: BaseViewController {
     // MARK: - UI Elements
@@ -154,9 +153,6 @@ final class RegisterViewController: BaseViewController {
         super.viewDidLoad()
         
         setupDatePicker()
-        
-        let realm = try! Realm()
-        print(realm.configuration.fileURL)
     }
     
     // MARK: - Setup
