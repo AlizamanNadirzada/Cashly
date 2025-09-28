@@ -8,12 +8,12 @@
 import UIKit
 
 final class RegisterViewModel {
-    private weak var coordinator: AuthCoordinator?
+    private weak var coordinator: AuthProtocol?
     private let registerUseCase: RegisterUserUseCase
         
     var onSuccess: (() -> Void)?
     
-    init(coordinator: AuthCoordinator? = nil, registerUseCase: RegisterUserUseCase) {
+    init(coordinator: AuthProtocol? = nil, registerUseCase: RegisterUserUseCase) {
         self.coordinator = coordinator
         self.registerUseCase = registerUseCase
     }

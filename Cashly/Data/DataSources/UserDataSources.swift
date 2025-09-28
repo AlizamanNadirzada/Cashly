@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class UserLocalDatasource {
+final class UserLocalDatasource: UserDataProtocol {
     private let realm = try! Realm()
     
     func saveUser(_ user: UserObject) throws {

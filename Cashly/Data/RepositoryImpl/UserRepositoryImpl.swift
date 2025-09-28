@@ -14,9 +14,9 @@ enum UserRepositoryError: Error {
 }
 
 final class UserRepositoryImpl: UserRepository {
-    private let localDatasource: UserLocalDatasource
+    private let localDatasource: UserDataProtocol
     
-    init(localDatasource: UserLocalDatasource) {
+    init(localDatasource: UserDataProtocol) {
         self.localDatasource = localDatasource
     }
     

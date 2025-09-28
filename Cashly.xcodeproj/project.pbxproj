@@ -66,6 +66,7 @@
 		E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				DataSources/UserDataProtocol.swift,
 				DataSources/UserDataSources.swift,
 				Models/User.swift,
 				RepositoryImpl/UserRepositoryImpl.swift,

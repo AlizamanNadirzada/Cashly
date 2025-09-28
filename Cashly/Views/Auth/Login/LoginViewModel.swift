@@ -8,13 +8,13 @@
 import UIKit
 
 final class LoginViewModel {
-    private weak var coordinator: AuthCoordinator?
+    private weak var coordinator: AuthProtocol?
     private let loginUseCase: LoginUserUseCase
     
     var onSuccess: (() -> Void)?
     var onError: ((String) -> Void)?
     
-    init(coordinator: AuthCoordinator? = nil, loginUseCase: LoginUserUseCase) {
+    init(coordinator: AuthProtocol? = nil, loginUseCase: LoginUserUseCase) {
         self.coordinator = coordinator
         self.loginUseCase = loginUseCase
     }
