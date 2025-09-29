@@ -37,26 +37,6 @@ final class UserRepositoryImpl: UserRepository {
         try localDatasource.saveUser(userObject)
     }
     
-//    func login(email: String, password: String) throws -> UserEntity {
-//        guard let userObject = localDatasource.getUserByEmail(email) else {
-//            throw UserRepositoryError.userNotFound
-//        }
-//        
-//        guard userObject.password == password else {
-//            throw UserRepositoryError.invalidPassword
-//        }
-//        
-//        return UserEntity(
-//            id: userObject.id,
-//            name: userObject.name,
-//            surname: userObject.surname,
-//            email: userObject.email,
-//            phone: userObject.phone,
-//            password: userObject.password,
-//            birthday: userObject.birthday
-//        )
-//    }
-    
     func login(email: String, password: String) throws -> UserEntity {
         guard let userObject = localDatasource.getUserByEmail(email) else {
             throw UserRepositoryError.userNotFound
@@ -67,7 +47,6 @@ final class UserRepositoryImpl: UserRepository {
         }
         
         UserDefaults.standard.set(userObject.email, forKey: "currentUserEmail")
-        // Əgər istəyirsənsə, id də saxla: UserDefaults.standard.set(userObject.id, forKey: "currentUserId")
         
         return UserEntity(
             id: userObject.id,
