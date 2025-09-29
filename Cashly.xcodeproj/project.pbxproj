@@ -57,7 +57,11 @@
 				Main/Home/HomeCoordinator.swift,
 				Main/Home/HomeViewController.swift,
 				Main/Home/HomeViewModel.swift,
-				Main/ProfileViewController.swift,
+				Main/Profile/Model/ProfileModel.swift,
+				Main/Profile/ProfileController/ProfileViewController.swift,
+				Main/Profile/ProfileController/ProfileViewModel.swift,
+				Main/Profile/Views/HeaderView.swift,
+				Main/Profile/Views/ProfileCell.swift,
 				Main/TabBar/TabBarController.swift,
 				Main/TabBar/TabBarCoordinator.swift,
 			);
