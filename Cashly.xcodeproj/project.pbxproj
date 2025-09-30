@@ -32,6 +32,7 @@
 				BaseField.swift,
 				BaseViewController.swift,
 				Colors.swift,
+				"Extensions/CollectionView+Ext.swift",
 				"Extensions/UIView+Ext.swift",
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
@@ -54,9 +55,12 @@
 				Auth/Login/LoginViewModel.swift,
 				Auth/Register/RegisterViewController.swift,
 				Auth/Register/RegisterViewModel.swift,
+				Main/Home/Cells/ActionCell.swift,
+				Main/Home/CollectionLayout.swift,
+				Main/Home/HomeController/HomeViewController.swift,
+				Main/Home/HomeController/HomeViewModel.swift,
 				Main/Home/HomeCoordinator.swift,
-				Main/Home/HomeViewController.swift,
-				Main/Home/HomeViewModel.swift,
+				Main/Home/Model/ActionCellModel.swift,
 				Main/Profile/Model/ProfileModel.swift,
 				Main/Profile/ProfileController/ProfileViewController.swift,
 				Main/Profile/ProfileController/ProfileViewModel.swift,

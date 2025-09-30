@@ -42,8 +42,7 @@ final class ProfileCell: UITableViewCell {
     
     func configureUI() {
         addSubview(stackView)
-        stackView.addArrangedSubview(iconImage)
-        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubviews(iconImage, titleLabel)
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 12),

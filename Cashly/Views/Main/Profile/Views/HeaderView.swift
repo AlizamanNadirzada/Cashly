@@ -71,11 +71,8 @@ final class HeaderView: UIView {
     }
     
     private func configureUI() {
-        addSubview(profileLabel)
-        addSubview(borderView)
-        addSubview(stackView)
-        stackView.addArrangedSubview(nameLabel)
-        stackView.addArrangedSubview(emailLabel)
+        addSubviews(profileLabel, borderView, stackView)
+        stackView.addArrangedSubviews(nameLabel, emailLabel)
         borderView.addSubview(imageView)
     }
     

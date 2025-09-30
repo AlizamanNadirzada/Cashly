@@ -11,7 +11,7 @@ final class ProfileViewController: BaseViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.register(ProfileCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -38,8 +38,7 @@ final class ProfileViewController: BaseViewController {
         
         view.backgroundColor = .button01
         
-        view.addSubview(headerView)
-        view.addSubview(bottomView)
+        view.addSubviews(headerView, bottomView)
         bottomView.addSubview(tableView)
         
         tableView.delegate = self
@@ -93,7 +92,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileCell.reuseIdentifier, for: indexPath) as! ProfileCell
         let item = viewModel.sections[indexPath.section].items[indexPath.row]
         var config = UIListContentConfiguration.cell()
         config.text = item.title
