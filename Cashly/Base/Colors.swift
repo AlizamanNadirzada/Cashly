@@ -17,6 +17,7 @@ extension UIColor {
     
     // Mark: Backround
     public static let background01: UIColor = .init(hex: "1E1E1E")
+    public static let background02: UIColor = .init(hex: "515558")
 }
 
 extension UIColor {

@@ -56,11 +56,15 @@
 				Auth/Register/RegisterViewController.swift,
 				Auth/Register/RegisterViewModel.swift,
 				Main/Home/Cells/ActionCell.swift,
+				Main/Home/Cells/CardCell.swift,
+				Main/Home/Cells/OperationCell.swift,
 				Main/Home/CollectionLayout.swift,
 				Main/Home/HomeController/HomeViewController.swift,
 				Main/Home/HomeController/HomeViewModel.swift,
-				Main/Home/HomeCoordinator.swift,
 				Main/Home/Model/ActionCellModel.swift,
+				Main/Home/Model/OperationCellModel.swift,
+				Main/Home/Model/SectionModel.swift,
+				Main/Home/Views/SectionHeaderView.swift,
 				Main/Profile/Model/ProfileModel.swift,
 				Main/Profile/ProfileController/ProfileViewController.swift,
 				Main/Profile/ProfileController/ProfileViewModel.swift,
@@ -74,9 +78,12 @@
 		E1CD07812E7ADF7100A4F7B9 /* Exceptions for "Data" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				DataSources/CardDataSources.swift,
 				DataSources/UserDataProtocol.swift,
 				DataSources/UserDataSources.swift,
+				Models/Card.swift,
 				Models/User.swift,
+				RepositoryImpl/CardRepositoryImpl.swift,
 				RepositoryImpl/UserRepositoryImpl.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
@@ -84,8 +91,11 @@
 		E1CD07932E7C120000A4F7B9 /* Exceptions for "Domain" folder in "Cashly" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Entities/CardEntity.swift,
 				Entities/UserEntity.swift,
+				Repository/CardRepositoryProtocol.swift,
 				Repository/UserRepisitory.swift,
+				UseCases/CardUseCase.swift,
 				UseCases/LoginUserUseCase.swift,
 				UseCases/RegisterUserUseCase.swift,
 			);

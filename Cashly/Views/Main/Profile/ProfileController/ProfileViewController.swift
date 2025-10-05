@@ -11,6 +11,7 @@ final class ProfileViewController: BaseViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
