@@ -48,6 +48,14 @@ final class CardCell: UICollectionViewCell {
         return label
     }()
     
+    private let cardTypeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.textColor = .secondaryLabel
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let gradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
@@ -68,7 +76,7 @@ final class CardCell: UICollectionViewCell {
     }
     
     private func configureUI() {
-        addSubviews(nameLabel, iconView, amountLabel, dateLabel, cardNumberLabel)
+        addSubviews(nameLabel, iconView, amountLabel, dateLabel, cardNumberLabel, cardTypeLabel)
         
         self.layer.borderColor = UIColor.systemYellow.cgColor
         self.layer.borderWidth = 1
@@ -110,7 +118,11 @@ final class CardCell: UICollectionViewCell {
             
             // Card Number
             dateLabel.bottomAnchor.constraint(equalTo: cardNumberLabel.topAnchor, constant: -8),
-            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            
+            // Card Type
+            cardTypeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            cardTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12)
         ])
     }
 }
@@ -121,6 +133,7 @@ extension CardCell {
         dateLabel.text = "\(format(date: model.expiryDate))"
         cardNumberLabel.text = "**** \(model.last4Digits)"
         iconView.image = UIImage(named: model.logo)
+        cardTypeLabel.text = model.type
     }
     
     private func format(date: Date) -> String {

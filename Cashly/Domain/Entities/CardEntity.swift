@@ -13,4 +13,5 @@ struct CardEntity: Hashable {
     let expiryDate: Date
     let last4Digits: String
     let logo: String
+    let type: String
 }

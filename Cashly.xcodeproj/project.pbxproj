@@ -72,6 +72,8 @@
 				Main/Profile/Views/ProfileCell.swift,
 				Main/TabBar/TabBarController.swift,
 				Main/TabBar/TabBarCoordinator.swift,
+				Main/Transaction/TransactionController/TransactionViewController.swift,
+				Main/Transaction/TransactionController/TransactionViewModel.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};

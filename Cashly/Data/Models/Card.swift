@@ -14,6 +14,7 @@ class CardModel: Object {
     @Persisted var expiryDate: Date = Date()
     @Persisted var last4Digits: String = ""
     @Persisted var logo: String = ""
+    @Persisted var type: String = ""
     
     // Mapping to Domain Entity
     func toEntity() -> CardEntity {
@@ -22,7 +23,8 @@ class CardModel: Object {
             balance: balance,
             expiryDate: expiryDate,
             last4Digits: last4Digits,
-            logo: logo
+            logo: logo,
+            type: type
         )
     }
     
@@ -34,6 +36,7 @@ class CardModel: Object {
         self.expiryDate = entity.expiryDate
         self.last4Digits = entity.last4Digits
         self.logo = entity.logo
+        self.type = entity.type
     }
 }
 

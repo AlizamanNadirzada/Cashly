@@ -14,28 +14,11 @@ class CardUseCase {
     init(repository: CardRepositoryProtocol) {
         self.repository = repository
         self.cards = repository.getAllCards()
-        
-        if cards.isEmpty {
-            let defaultCard = createDefaultCard()
-            repository.addCard(defaultCard)
-            cards.append(defaultCard)
-        }
-    }
-    
-    // Default Card
-    private func createDefaultCard() -> CardEntity {
-        return CardEntity(
-            id: UUID().uuidString,
-            balance: 1000, // default balans
-            expiryDate: Calendar.current.date(byAdding: .year, value: 3, to: Date()) ?? Date(),
-            last4Digits: "1234",
-            logo: "visa"
-        )
     }
     
     // Create random card
     func createRandomCard() -> CardEntity {
-        let balance = Int.random(in: 50...1000)
+        let balance = Int.random(in: 50...5000)
         
         var dateComponents = DateComponents()
         dateComponents.year = Int.random(in: 2025...2030)
@@ -45,12 +28,16 @@ class CardUseCase {
         let last4 = String(format: "%04d", Int.random(in: 0...9999))
         let logo = Bool.random() ? "visa" : "master"
         
+        let cardTypes = ["Visa Standard", "Visa Business", "MasterCard Standard", "MasterCard Business"]
+        let type = cardTypes.randomElement() ?? "Visa Standard"
+        
         return CardEntity(
             id: UUID().uuidString,
             balance: balance,
             expiryDate: expiry,
             last4Digits: last4,
-            logo: logo
+            logo: logo,
+            type: type
         )
     }
     

@@ -132,9 +132,9 @@ extension HomeViewController {
                         guard let self else { return }
                         switch model.type {
                         case .add:
-                            self.viewModel.addRandomCard()
+                            viewModel.addRandomCard()
                         case .delete:
-                            self.viewModel.deleteCard(at: 0)
+                            viewModel.deleteCard(at: 0)
                         case .transaction:
                             print("Transaction pressed")
                         }
