@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class CardDataSource {
+final class CardDataSource {
     private let realm = try! Realm()
     
     func saveCard(_ card: CardModel) {

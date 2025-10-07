@@ -77,7 +77,7 @@ final class HomeViewController: BaseViewController {
     override func configureConstraints() {
         NSLayoutConstraint.activate([
             // Title
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Subtitle
@@ -135,7 +135,7 @@ extension HomeViewController {
                             viewModel.addRandomCard()
                         case .delete:
                             viewModel.deleteCard(at: 0)
-                        case .transaction:
+                        case .transfer:
                             print("Transaction pressed")
                         }
                     }

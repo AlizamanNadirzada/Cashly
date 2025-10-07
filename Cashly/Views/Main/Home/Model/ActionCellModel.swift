@@ -10,7 +10,7 @@ import Foundation
 enum ActionType {
     case add
     case delete
-    case transaction
+    case transfer
 }
 
 struct ActionCellModel: Hashable {
@@ -23,9 +23,9 @@ struct ActionCellModel: Hashable {
 extension ActionCellModel {
     static func mockData() -> [ActionCellModel] {
         return [
-            ActionCellModel(iconName: "plus.circle", title: "Add Card", type: .add),
-            ActionCellModel(iconName: "trash.circle", title: "Delete Card", type: .delete),
-            ActionCellModel(iconName: "arrow.right.arrow.left.circle", title: "Transaction", type: .transaction)
+            ActionCellModel(iconName: "plus.square.on.square", title: "Add Card", type: .add),
+            ActionCellModel(iconName: "trash", title: "Delete Card", type: .delete),
+            ActionCellModel(iconName: "arrow.right.arrow.left", title: "Transfer", type: .transfer)
         ]
     }
 }

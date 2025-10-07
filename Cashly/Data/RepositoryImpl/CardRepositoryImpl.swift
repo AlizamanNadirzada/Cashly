@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardRepositoryImpl: CardRepositoryProtocol {
+final class CardRepositoryImpl: CardRepositoryProtocol {
     private let dataSource = CardDataSource()
     
     func addCard(_ card: CardEntity) {

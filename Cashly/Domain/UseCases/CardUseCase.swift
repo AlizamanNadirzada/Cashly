@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardUseCase {
+final class CardUseCase {
     private let repository: CardRepositoryProtocol
     private(set) var cards: [CardEntity] = []
     
@@ -28,8 +28,14 @@ class CardUseCase {
         let last4 = String(format: "%04d", Int.random(in: 0...9999))
         let logo = Bool.random() ? "visa" : "master"
         
-        let cardTypes = ["Visa Standard", "Visa Business", "MasterCard Standard", "MasterCard Business"]
-        let type = cardTypes.randomElement() ?? "Visa Standard"
+        let visaCardTypes = ["Visa Standard", "Visa Business"]
+        let masterCardTypes = ["Mastercard Standard", "Mastercard Classic", "Mastercard International"]
+        let type: String
+        if logo == "visa" {
+            type = visaCardTypes.randomElement() ?? "Visa Standard"
+        } else {
+            type = masterCardTypes.randomElement() ?? "Mastercard Standard"
+        }
         
         return CardEntity(
             id: UUID().uuidString,

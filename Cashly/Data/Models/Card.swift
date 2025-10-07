@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class CardModel: Object {
+final class CardModel: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
     @Persisted var balance: Int = 0
     @Persisted var expiryDate: Date = Date()
