@@ -46,6 +46,8 @@ final class UserRepositoryImpl: UserRepository {
             throw UserRepositoryError.invalidPassword
         }
         
+        UserDefaults.standard.set(userObject.email, forKey: "currentUserEmail")
+        
         return UserEntity(
             id: userObject.id,
             name: userObject.name,
@@ -56,5 +58,6 @@ final class UserRepositoryImpl: UserRepository {
             birthday: userObject.birthday
         )
     }
+
 }
 
