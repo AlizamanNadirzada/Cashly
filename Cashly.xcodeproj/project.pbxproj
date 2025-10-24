@@ -71,9 +71,12 @@
 				Main/Profile/Views/HeaderView.swift,
 				Main/Profile/Views/ProfileCell.swift,
 				Main/TabBar/TabBarController.swift,
-				Main/TabBar/TabBarCoordinator.swift,
-				Main/Transaction/TransactionController/TransactionViewController.swift,
-				Main/Transaction/TransactionController/TransactionViewModel.swift,
+				Main/Transfer/AccountsController/AccountViewController.swift,
+				Main/Transfer/AccountsController/AccountViewModel.swift,
+				Main/Transfer/TransferController/TransferViewController.swift,
+				Main/Transfer/TransferController/TransferViewModel.swift,
+				Main/Transfer/Views/AccountCardCell.swift,
+				Main/Transfer/Views/ListView.swift,
 			);
 			target = E14595712E56F8A000BD08D3 /* Cashly */;
 		};
