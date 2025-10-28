@@ -25,4 +25,8 @@ final class CardRepositoryImpl: CardRepositoryProtocol {
     func getAllCards() -> [CardEntity] {
         return dataSource.fetchAllCards().map { $0.toEntity() }
     }
+    
+    func transfer(amount: Int, from fromCard: CardEntity, to toCard: CardEntity) throws {
+        try dataSource.transfer(amount: amount, fromId: fromCard.id, toId: toCard.id)
+    }
 }

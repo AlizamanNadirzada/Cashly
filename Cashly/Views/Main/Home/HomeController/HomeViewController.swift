@@ -70,8 +70,6 @@ final class HomeViewController: BaseViewController {
     override func configureUI() {
         view.addSubviews(titleLabel, subtitleLabel, collection)
         collection.addSubview(pageControl)
-        
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func configureConstraints() {
@@ -136,7 +134,7 @@ extension HomeViewController {
                         case .delete:
                             viewModel.deleteCard(at: 0)
                         case .transfer:
-                            print("Transaction pressed")
+                            showTransferScreen()
                         }
                     }
                     return cell
@@ -183,5 +181,12 @@ extension HomeViewController {
             self.collectionDataSource.apply(snapshot, animatingDifferences: true)
             self.pageControl.numberOfPages = data[.cards]?.count ?? 0
         }
+    }
+}
+
+extension HomeViewController {
+    private func showTransferScreen() {
+        let controller = TransferViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

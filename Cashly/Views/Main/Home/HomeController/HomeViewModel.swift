@@ -5,10 +5,7 @@
 //  Created by Nadirzada Alizaman on 30.08.25.
 //
 
-
-import Foundation
-
-import Foundation
+import UIKit
 
 final class HomeViewModel {
 
