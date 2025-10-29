@@ -37,6 +37,7 @@ final class TransferViewController: BaseViewController {
         button.backgroundColor = .base01
         button.layer.cornerRadius = 12
         button.isEnabled = false
+        button.alpha = 0.5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -96,6 +97,17 @@ final class TransferViewController: BaseViewController {
         transferViewModel.onUpdate = { [weak self] in
             self?.updateTransferButton()
         }
+        
+        transferViewModel.onTransferSuccess = { [weak self] in
+            guard let self = self else { return }
+            self.showAlert(title: "Success", message: "Transfer completed") {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+
+        transferViewModel.onTransferFailure = { [weak self] message in
+            self?.showAlert(title: "Error", message: message)
+        }
     }
     
     @objc private func fromTapped() {
@@ -131,7 +143,12 @@ final class TransferViewController: BaseViewController {
     }
     
     @objc func transferTapped() {
+        guard let amountText = amountField.text, !amountText.isEmpty else {
+            amountField.errorMessage = "Please enter amount"
+            return
+        }
         
+        transferViewModel.performTransfer(amountText: amountText)
     }
     
     private func updateTransferButton() {
@@ -140,5 +157,11 @@ final class TransferViewController: BaseViewController {
         
         actionButton.isEnabled = isEnabled
         actionButton.alpha = isEnabled ? 1.0 : 0.5
+    }
+    
+    private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in completion?() }))
+        present(alert, animated: true)
     }
 }
